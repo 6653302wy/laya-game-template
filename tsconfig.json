@@ -1,0 +1,13 @@
+{
+  "compilerOptions": {
+    "module": "es6",
+    "target": "es6",
+    "noEmitHelpers": true,
+    "removeComments": true,
+    "allowSyntheticDefaultImports": true,
+    "outDir": "./tsc_outputs",
+  },
+  "exclude": [
+    "node_modules"
+  ]
+}

@@ -1,0 +1,6 @@
+.rpt2_cache
+node_modules
+.vscode
+.laya
+tsc_outputs
+bin/js
