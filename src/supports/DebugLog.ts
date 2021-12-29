@@ -1,4 +1,4 @@
-import { GameConfig } from "./GameConfig";
+import { GameConfig } from '../GameConfig';
 
 /*
  * name;
@@ -8,8 +8,7 @@ export class DebugLog {
     if (!GameConfig.debug) return;
 
     if (optionalParams.length > 1) console.log(message, optionalParams);
-    else if (optionalParams.length == 1)
-      console.log(message, optionalParams[0]);
+    else if (optionalParams.length == 1) console.log(message, optionalParams[0]);
     else console.log(message);
   }
 
@@ -17,8 +16,7 @@ export class DebugLog {
     if (!GameConfig.debug) return;
 
     if (optionalParams.length > 1) console.error(message, optionalParams);
-    else if (optionalParams.length == 1)
-      console.error(message, optionalParams[0]);
+    else if (optionalParams.length == 1) console.error(message, optionalParams[0]);
     else console.error(message);
   }
 

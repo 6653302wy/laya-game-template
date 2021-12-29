@@ -1,4 +1,6 @@
-import { GameConfig } from './GameConfig';
+import { Env, GameConfig, PlatForm } from './GameConfig';
+import { Helper } from './supports/Helper';
+
 class Main {
   constructor() {
     //根据IDE设置初始化引擎
@@ -9,7 +11,10 @@ class Main {
     Laya.stage.alignV = GameConfig.alignV;
     Laya.stage.alignH = GameConfig.alignH;
     //兼容微信不支持加载scene后缀场景
-    Laya.URL.exportSceneToJson = GameConfig.exportSceneToJson;
+    Laya.URL.exportSceneToJson = true;
+
+    this.initConfig();
+    this.initFgui();
 
     //激活资源版本控制，version.json由IDE发布功能自动生成，如果没有也不影响后续流程
     Laya.ResourceVersion.enable(
@@ -18,7 +23,22 @@ class Main {
       Laya.ResourceVersion.FILENAME_VERSION,
     );
 
-    this.initFgui();
+    // Laya.URL.basePath = 'bin/';
+  }
+
+  private initConfig() {
+    const cfUri = 'res/config.json';
+    Laya.loader.load(
+      [{ url: cfUri, type: Laya.Loader.JSON }],
+      Helper.Handler(this, () => {
+        const cfg = Laya.loader.getRes(cfUri);
+        GameConfig.env = cfg?.env || Env.ENV_DEV;
+        GameConfig.debug = GameConfig.env === Env.ENV_DEV;
+        GameConfig.platForm = cfg?.platForm || PlatForm.UNDEFINED;
+
+        Laya.loader.clearRes(cfUri);
+      }),
+    );
   }
 
   private initFgui() {
@@ -27,11 +47,10 @@ class Main {
   }
 
   private onVersionLoaded(): void {
-    //激活大小图映射，加载小图的时候，如果发现小图在大图合集里面，则优先加载大图合集，而不是小图
-    Laya.AtlasInfoManager.enable('fileconfig.json', Laya.Handler.create(this, this.onConfigLoaded));
+    this.startGame();
   }
 
-  private onConfigLoaded(): void {
+  private startGame(): void {
     const txt = new Laya.Text();
     txt.text = 'Hello World !';
     txt.fontSize = 30;

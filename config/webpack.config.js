@@ -32,7 +32,7 @@ module.exports = {
     mode: isPrd ? 'production' : 'development',
     devtool: isPrd ? 'source-map' : 'inline-source-map',
     devServer: {
-        static: resolve(''),
+        static: resolve('bin'), // 运行路径
         compress: true,
         port: 8081,
         open: true,
