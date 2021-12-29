@@ -51,7 +51,8 @@ module.exports = {
         ],
         libs:[
             resolve('bin/libs/laya.core.js'),
-            resolve('bin/libs/laya.ui.js'),
+            resolve('bin/libs/laya.ani.js'),
+            resolve('bin/libs/outlibs/fairygui.js'),
         ],
         bundle: resolve("tsc_outputs/Main.js"),
     },
