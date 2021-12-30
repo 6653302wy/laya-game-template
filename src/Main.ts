@@ -55,8 +55,8 @@ class Main {
   private loadAssets() {
     AssetsLoader.inst.onUILoad(
       [
-        { pkgName: 'basic', atlasLen: 1 },
-        { pkgName: 'loading', atlasLen: 1 },
+        { pkgName: 'basic', imgCount: 1 },
+        { pkgName: 'loading', imgCount: 1 },
       ],
       this.startGame,
     );

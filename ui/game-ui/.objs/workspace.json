@@ -1,0 +1,32 @@
+{
+  "libview.firstColumnWidth": 283,
+  "libview.iconScale": 0,
+  "backgroundColor": 6710886,
+  "test.device": "iPhone Xs Max",
+  "canvasColor": 10066329,
+  "libview.expandedNodes": [
+    "vs29vmxd",
+    "/",
+    "vs29vmxd",
+    "/images/",
+    "vzw58vom",
+    "/",
+    "vzw58vom",
+    "/images/"
+  ],
+  "doc.activeDoc": "ui://vs29vmxdjpco1",
+  "libview.twoColumn": false,
+  "auxline2": true,
+  "auxline1": true,
+  "snapToGrid": true,
+  "test.orientation": "portriait",
+  "gridColor": 80,
+  "libview.currentGroup": "",
+  "doc.openedDocs": [
+    "ui://vufbxh14jpco1",
+    "ui://vzw58vomjpco0",
+    "ui://vs29vmxdjpco1",
+    "ui://vzw58vomjpco4"
+  ],
+  "gridSize": 30
+}

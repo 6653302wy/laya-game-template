@@ -5,6 +5,7 @@
     <image id="jpco1" name="bar.png" path="/images/" scale="tile"/>
     <image id="jpco2" name="trunk.png" path="/images/" scale="9grid" scale9grid="207,42,416,11"/>
     <component id="jpco4" name="progress_bar.xml" path="/"/>
+    <image id="jpco5" name="bg.png" path="/images/"/>
   </resources>
   <publish name=""/>
 </packageDescription>

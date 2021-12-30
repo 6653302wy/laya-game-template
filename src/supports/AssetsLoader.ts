@@ -8,7 +8,7 @@ export interface IProgerssInfo {
 
 export interface UIAssetsLoaderInfo {
   pkgName: string;
-  atlasLen: number;
+  imgCount: number;
 }
 
 export class AssetsLoader {
@@ -26,7 +26,7 @@ export class AssetsLoader {
     const list = uis.map((item) => {
       const uiName = item.pkgName;
       const uiAssets = [{ url: `res/ui/${uiName}.gz`, type: Laya.Loader.BUFFER }];
-      let imgLen = item.atlasLen;
+      let imgLen = item.imgCount;
       while (imgLen) {
         imgLen -= 1;
         uiAssets.push({ url: `res/ui/${uiName}_atlas${imgLen}.png`, type: Laya.Loader.IMAGE });
