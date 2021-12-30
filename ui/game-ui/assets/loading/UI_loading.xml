@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="750,1334">
+  <displayList>
+    <component id="n2_jpco" name="n2" src="jpco4" fileName="progress_bar.xml" xy="38,916" size="835,133" scale="0.8,0.8">
+      <ProgressBar max="100"/>
+    </component>
+  </displayList>
+</component>

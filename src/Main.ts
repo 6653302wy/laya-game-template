@@ -1,4 +1,6 @@
 import { Env, GameConfig, PlatForm } from './GameConfig';
+import { LoadingView } from './modules/Loading/LoadingView';
+import { AssetsLoader } from './supports/AssetsLoader';
 import { Helper } from './supports/Helper';
 
 class Main {
@@ -47,17 +49,21 @@ class Main {
   }
 
   private onVersionLoaded(): void {
-    this.startGame();
+    this.loadAssets();
+  }
+
+  private loadAssets() {
+    AssetsLoader.inst.onUILoad(
+      [
+        { pkgName: 'basic', atlasLen: 1 },
+        { pkgName: 'loading', atlasLen: 1 },
+      ],
+      this.startGame,
+    );
   }
 
   private startGame(): void {
-    const txt = new Laya.Text();
-    txt.text = 'Hello World !';
-    txt.fontSize = 30;
-    txt.color = '#ffffff';
-    Laya.stage.addChild(txt);
-    txt.x = (Laya.stage.width - txt.width) >> 1;
-    txt.y = Laya.stage.height / 2;
+    Helper.toggleView(LoadingView);
   }
 }
 //激活启动类

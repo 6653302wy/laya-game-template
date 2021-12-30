@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="302,64">
+  <displayList>
+    <image id="n4_jpco" name="n4" src="jpco2" fileName="toast/tushi_kuang.png" xy="0,0" size="302,64" aspect="true"/>
+    <text id="n5_jpco" name="txt" xy="0,0" size="306,65" aspect="true" fontSize="30" color="#ffffff" align="center" vAlign="middle" autoSize="none" text="this is tip"/>
+  </displayList>
+  <transition name="play">
+    <item time="0" type="Alpha" tween="true" startValue="0" endValue="1" duration="6"/>
+    <item time="0" type="XY" tween="true" startValue="0,103" endValue="0,0" duration="6"/>
+    <item time="6" type="Alpha" tween="true" startValue="1" endValue="1" duration="42"/>
+    <item time="6" type="XY" tween="true" startValue="0,0" endValue="0,0" duration="42"/>
+    <item time="48" type="Alpha" tween="true" startValue="1" endValue="0" duration="6"/>
+    <item time="48" type="XY" tween="true" startValue="0,0" endValue="0,-125" duration="6"/>
+    <item time="60" type="XY" value="0,0"/>
+  </transition>
+</component>

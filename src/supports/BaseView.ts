@@ -1,9 +1,10 @@
 import { UIWindowMgr } from './UIWindowMgr';
 
-export class BasePanel extends fgui.Window {
+export class BaseView extends fgui.Window {
   protected _data: any;
   constructor(pkgName: string, uiName: string, isModel?: boolean) {
     super();
+
     UIWindowMgr.creatWinCom(pkgName, uiName, this, isModel || true);
   }
 

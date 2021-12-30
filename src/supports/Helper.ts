@@ -7,7 +7,7 @@ export class Helper {
   }
 
   /** 打开或关闭ui */
-  static togglePanel<T>(panel: { new (): T }, isShow = 1, data?: any, dispose?: boolean): T {
+  static toggleView<T>(panel: { new (): T }, isShow = 1, data?: any, dispose?: boolean): T {
     let view;
     if (isShow) {
       view = SinglonUtil.getSinglon(panel);

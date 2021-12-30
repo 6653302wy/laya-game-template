@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<packageDescription id="vzw58vom">
+  <resources>
+    <component id="jpco0" name="UI_loading.xml" path="/" exported="true"/>
+    <image id="jpco1" name="bar.png" path="/images/" scale="tile"/>
+    <image id="jpco2" name="trunk.png" path="/images/" scale="9grid" scale9grid="207,42,416,11"/>
+    <component id="jpco4" name="progress_bar.xml" path="/"/>
+  </resources>
+  <publish name=""/>
+</packageDescription>

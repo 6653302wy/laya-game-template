@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<packageDescription id="vufbxh14">
+  <resources>
+    <component id="jpco1" name="toast.xml" path="/toast/" exported="true"/>
+    <image id="jpco2" name="tushi_kuang.png" path="/toast/"/>
+  </resources>
+  <publish name=""/>
+</packageDescription>

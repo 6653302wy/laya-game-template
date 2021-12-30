@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="835,133" extention="ProgressBar">
+  <displayList>
+    <image id="n0_jpco" name="n0" src="jpco2" fileName="images/trunk.png" xy="0,0" size="835,133">
+      <relation target="" sidePair="width-width,height-height"/>
+    </image>
+    <image id="n1_jpco" name="bar" src="jpco1" fileName="images/bar.png" xy="22,8" size="789,81">
+      <relation target="" sidePair="width-width,height-height"/>
+    </image>
+    <text id="n2_jpco" name="title" xy="0,0" size="835,93" fontSize="30" color="#ffffff" align="center" vAlign="middle" autoSize="none" text="">
+      <relation target="" sidePair="width-width,height-height"/>
+    </text>
+  </displayList>
+  <ProgressBar titleType="valueAndmax"/>
+</component>
