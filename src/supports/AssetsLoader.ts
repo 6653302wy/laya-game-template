@@ -1,10 +1,5 @@
-import { DebugLog } from './DebugLog';
 import { Helper } from './Helper';
 import { SinglonUtil } from './SinglonUtil';
-
-export interface IProgerssInfo {
-  pro: number;
-}
 
 export interface UIAssetsLoaderInfo {
   pkgName: string;
@@ -20,9 +15,9 @@ export class AssetsLoader {
    * 加载ui所需资源
    * @param uis
    * @param pkgName ui包名
-   * @param altlasLen ui导出的图片资源数量
+   * @param imgCount ui导出的图片资源数量
    */
-  onUILoad(uis: UIAssetsLoaderInfo[], cb?: () => void): IProgerssInfo {
+  onUILoad(uis: UIAssetsLoaderInfo[], loadComplete?: () => void, loadProgress?: Laya.Handler) {
     const list = uis.map((item) => {
       const uiName = item.pkgName;
       const uiAssets = [{ url: `res/ui/${uiName}.gz`, type: Laya.Loader.BUFFER }];
@@ -35,23 +30,19 @@ export class AssetsLoader {
     });
     const total = list.flat();
 
-    let curPro: number;
     Laya.loader.load(
       total,
       Helper.Handler(this, () => {
-        cb?.();
+        loadComplete?.();
       }),
       Helper.Handler(
         this,
         (pro: number) => {
-          curPro = pro * 100;
+          loadProgress?.runWith(pro);
         },
         null,
         false,
       ),
     );
-
-    DebugLog.log('加载进度===', curPro);
-    return { pro: curPro };
   }
 }
